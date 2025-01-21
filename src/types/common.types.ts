@@ -1,0 +1,1 @@
+export type NavigationTabType = 'About' | 'Contact' | 'Experience' | 'Projects' | 'Skills';
