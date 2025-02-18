@@ -8,7 +8,7 @@ import type { NavigationTabType } from '../types/common.types';
 
 const About = defineAsyncComponent(() => import('./About.vue'));
 const Experience = defineAsyncComponent(() => import('./Experience.vue'));
-const Projects = defineAsyncComponent(() => import('./Projects.vue'));
+const Projects = defineAsyncComponent(() => import("./Projects.vue"));
 const Contact = defineAsyncComponent(() => import('./Contact.vue'));
 const Skills = defineAsyncComponent(() => import('./Skills.vue'))
 
@@ -35,10 +35,10 @@ function handleComponentChange(selectedComponent: NavigationTabType) {
 </script>
 
 <template>
-  <div class="p-10 w-screen h-screen bg-transparent">
+  <div class="p-10 w-screen h-screen bg-transparent overflow-auto">
     <div class="w-full h-full">
         <Header @component-change="handleComponentChange" />
-        <div>
+        <div class="flex justify-center items-center">
             <SlidingAnimation :componentKey="selectedLink"> 
                 <component :is="renderComponent(selectedLink)" />
             </SlidingAnimation>

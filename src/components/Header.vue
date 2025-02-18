@@ -31,7 +31,7 @@ function handleComponentChange(selectedComponent: NavigationTabType) {
             </div>
             <div class="flex justify-center">
                 <div class="w-[19rem] text-left">
-                    FullStack Developer
+                    Software Engineer
                 </div>
             </div>
         </div>

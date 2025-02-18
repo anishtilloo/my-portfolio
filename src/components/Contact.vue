@@ -1,14 +1,61 @@
+<script setup lang="ts">
+import { ref } from "vue";
+import { InputText, InputTextArea, TextButton } from "@elemento/ui";
+
+const form = ref({
+  name: "",
+  email: "",
+  subject: "",
+  message: ""
+});
+
+function handleSubmit() {
+  console.log("Form submitted:", form.value);
+  // Process form submission here (API call, email service, etc.)
+  // Reset the form after submission
+  form.value = { name: "", email: "", subject: "", message: "" };
+}
+</script>
+
 <template>
-    <div class="p-8 flex">
-        <div class="p-8">
-            <div class="w-60 h-60 bg-blue-400"></div>
+  <div class="container p-8 flex justify-between items-center">
+    <!-- Right Column -->
+    <div class="px-8 py-2 w-full">
+      <section id="contact">
+        <div class="mx-auto px-4">
+          <div class="max-w-lg mx-auto dark:bg-black px-8 py-8 rounded-lg shadow-lg">
+            <h2 class="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-white">
+              Contact Me
+            </h2>
+            <form @submit.prevent="handleSubmit">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Three Inputs -->
+                <div class="space-y-4">
+                    <div>
+                        <InputText label="Name" v-model="form.name" error="" name="Name" placeholder="Your Name" />
+                    </div>
+                    <div>
+                        <InputText label="Email" v-model="form.email" error="" name="Email" placeholder="Your Email" />
+                    </div>
+                    <div>
+                        <InputText label="Subject" v-model="form.subject" error="" name="Subject" placeholder="Your Subject" />
+                    </div>
+                </div>
+
+                <!-- Textarea -->
+                <div>
+                    <InputTextArea id="message" label="Message" v-model="form.message" :rows="10" error="" name="Message" placeholder="Your Message" />
+                </div>
+
+                <!-- Button -->
+                <div class="md:col-span-2">
+                  <TextButton text="Send Message" />
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
-        <div class="p-8">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae nihil obcaecati sapiente, fugit culpa totam modi exercitationem accusamus nemo accusantium explicabo eos perspiciatis nam facere itaque, ad veniam odio dicta.
-            Non blanditiis suscipit neque necessitatibus nihil praesentium corporis. Sint officiis, aspernatur recusandae, similique dolor illum assumenda saepe voluptates id velit perferendis repellat optio non sunt laudantium unde harum quam quaerat.
-            Modi optio dolorem beatae, soluta hic enim consequuntur harum atque repellat exercitationem dignissimos corrupti, explicabo quo dolore reiciendis vitae magnam ratione voluptatibus porro ad eaque at quis molestiae ab? Provident.
-            Eum similique alias deserunt mollitia debitis, non id soluta modi atque expedita ipsum maxime tempore fuga laudantium quia fugit, aliquam iure sunt quasi possimus necessitatibus dolor exercitationem est? Dolorum, officiis.
-            Similique pariatur recusandae aperiam sequi cumque ullam et est earum provident temporibus facere sunt enim quos molestias corporis a, sapiente reprehenderit voluptate eum cum animi. 
-        </div>
+      </section>
     </div>
+  </div>
 </template>

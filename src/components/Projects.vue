@@ -1,14 +1,70 @@
+<script setup lang="ts">
+import { ref } from "vue";
+import { ImageCard } from "@elemento/ui";
+
+const projects = ref([
+  {
+    id: 1,
+    title: "Project One",
+    description:
+      "A fantastic project that demonstrates my skills in building modern web applications.",
+    image: "https://via.placeholder.com/400x300",
+    link: "#"
+  },
+  {
+    id: 2,
+    title: "Project Two",
+    description:
+      "An innovative solution built with cutting-edge technologies and best practices.",
+    image: "https://via.placeholder.com/400x300",
+    link: "#"
+  },
+  {
+    id: 3,
+    title: "Project Three",
+    description:
+      "A creative project that showcases design and development expertise.",
+    image: "https://via.placeholder.com/400x300",
+    link: "#"
+  },
+  {
+    id: 4,
+    title: "Project Four",
+    description:
+      "A dynamic project focusing on scalability and performance optimization.",
+    image: "https://via.placeholder.com/400x300",
+    link: "#"
+  },
+  {
+    id: 5,
+    title: "Project Five",
+    description:
+      "A dynamic project focusing on scalability and performance optimization.",
+    image: "https://via.placeholder.com/400x300",
+    link: "#"
+  },
+  {
+    id: 6,
+    title: "Project Six",
+    description:
+      "A dynamic project focusing on scalability and performance optimization.",
+    image: "https://via.placeholder.com/400x300",
+    link: "#"
+  }
+]);
+</script>
+
 <template>
-    <div class="p-8 flex">
-        <div class="p-8">
-            <div class="w-60 h-60 bg-red-400"></div>
+  <section id="projects" class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          v-for="project in projects"
+          :key="project.id"
+        >
+            <ImageCard :displayData="project" />
         </div>
-        <div class="p-8">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae nihil obcaecati sapiente, fugit culpa totam modi exercitationem accusamus nemo accusantium explicabo eos perspiciatis nam facere itaque, ad veniam odio dicta.
-            Non blanditiis suscipit neque necessitatibus nihil praesentium corporis. Sint officiis, aspernatur recusandae, similique dolor illum assumenda saepe voluptates id velit perferendis repellat optio non sunt laudantium unde harum quam quaerat.
-            Modi optio dolorem beatae, soluta hic enim consequuntur harum atque repellat exercitationem dignissimos corrupti, explicabo quo dolore reiciendis vitae magnam ratione voluptatibus porro ad eaque at quis molestiae ab? Provident.
-            Eum similique alias deserunt mollitia debitis, non id soluta modi atque expedita ipsum maxime tempore fuga laudantium quia fugit, aliquam iure sunt quasi possimus necessitatibus dolor exercitationem est? Dolorum, officiis.
-            Similique pariatur recusandae aperiam sequi cumque ullam et est earum provident temporibus facere sunt enim quos molestias corporis a, sapiente reprehenderit voluptate eum cum animi. 
-        </div>
+      </div>
     </div>
+  </section>
 </template>

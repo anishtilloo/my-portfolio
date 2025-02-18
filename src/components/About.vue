@@ -1,8 +1,6 @@
 <template>
     <div class="p-8 flex align-middle justify-between">
         <div class="p-8 relative w-[28rem] flex items-center justify-between">
-            <div class="bg-slate-500/50 absolute left-0 w-20 h-60 z-10 rounded-2xl"></div>
-            <div class="bg-slate-500/50 absolute right-0 w-20 h-60 z-10 rounded-2xl"></div>
             <div class="w-48 h-48 bg-blue-950 rounded-lg z-30"></div>
         </div>
         <div class="p-8">
