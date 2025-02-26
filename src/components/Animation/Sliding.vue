@@ -34,11 +34,11 @@ isVisible.value = true;
 
 .slide-fade-enter-from {
   opacity: 0;
-  transform: translateX(50px);
+  transform: translateY(100px);
 }
 .slide-fade-leave-to {
   opacity: 0;
-  transform: translateX(-50px);
+  transform: translateY(-100px);
 }
 </style>
 

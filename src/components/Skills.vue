@@ -96,83 +96,20 @@ progress::-moz-progress-bar {
 }
 </style> -->
 
-
+<script lang="ts" setup>
+import { SkillCard } from '@elemento/ui';
+</script>
 <template>
-    <section id="skills" class="py-16 bg-black text-white">
+    <section id="skills" class="py-16 text-white">
   <div class="container mx-auto px-4">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- Skill Card -->
-      <div class="bg-black rounded-lg shadow p-6">
-        <div class="flex items-center mb-4">
-          <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center text-black mr-4">
-            <span class="text-xl font-bold">JS</span>
-          </div>
-          <h3 class="text-xl font-semibold">JavaScript</h3>
-        </div>
-        <progress id="jsSkill" class="w-full h-4 rounded-full" max="100" value="80">80%</progress>
-        <p class="text-sm text-gray-100 mt-2">80% proficiency</p>
-      </div>
-      
-      <!-- Skill Card -->
-      <div class="bg-black rounded-lg shadow p-6">
-        <div class="flex items-center mb-4">
-          <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-black mr-4">
-            <span class="text-xl font-bold">Vue</span>
-          </div>
-          <h3 class="text-xl font-semibold">Vue.js</h3>
-        </div>
-        <progress id="vueSkill" class="w-full h-4 rounded-full" max="100" value="70">70%</progress>
-        <p class="text-sm text-gray-100 mt-2">70% proficiency</p>
-      </div>
-
-       <!-- Skill Card -->
-      <div class="bg-black rounded-lg shadow p-6">
-        <div class="flex items-center mb-4">
-          <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-black mr-4">
-            <span class="text-xl font-bold">Vue</span>
-          </div>
-          <h3 class="text-xl font-semibold">Vue.js</h3>
-        </div>
-        <progress id="vueSkill" class="w-full h-4 rounded-full" max="100" value="70">70%</progress>
-        <p class="text-sm text-gray-100 mt-2">70% proficiency</p>
-      </div>
-
-       <!-- Skill Card -->
-      <div class="bg-black rounded-lg shadow p-6">
-        <div class="flex items-center mb-4">
-          <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-black mr-4">
-            <span class="text-xl font-bold">Vue</span>
-          </div>
-          <h3 class="text-xl font-semibold">Vue.js</h3>
-        </div>
-        <progress id="vueSkill" class="w-full h-4 rounded-full" max="100" value="70">70%</progress>
-        <p class="text-sm text-gray-100 mt-2">70% proficiency</p>
-      </div>
-
-       <!-- Skill Card -->
-      <div class="bg-black rounded-lg shadow p-6">
-        <div class="flex items-center mb-4">
-          <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-black mr-4">
-            <span class="text-xl font-bold">Vue</span>
-          </div>
-          <h3 class="text-xl font-semibold">Vue.js</h3>
-        </div>
-        <progress id="vueSkill" class="w-full h-4 rounded-full" max="100" value="70">70%</progress>
-        <p class="text-sm text-gray-100 mt-2">70% proficiency</p>
-      </div>
-
-       <!-- Skill Card -->
-      <div class="bg-black rounded-lg shadow p-6">
-        <div class="flex items-center mb-4">
-          <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-black mr-4">
-            <span class="text-xl font-bold">Vue</span>
-          </div>
-          <h3 class="text-xl font-semibold">Vue.js</h3>
-        </div>
-        <progress id="vueSkill" class="w-full h-4 rounded-full" max="100" value="70">70%</progress>
-        <p class="text-sm text-gray-100 mt-2">70% proficiency</p>
-      </div>
-      
+      <SkillCard initials-and-bar-color="red" skill-initials="Vue" skill-name="Vue.js" :proficiency="80"/>
+      <SkillCard initials-and-bar-color="blue" skill-initials="Vue" skill-name="Vue.js" :proficiency="80"/>
+      <SkillCard initials-and-bar-color="green" skill-initials="Vue" skill-name="Vue.js" :proficiency="80"/>
+      <SkillCard initials-and-bar-color="yellow" skill-initials="Vue" skill-name="Vue.js" :proficiency="80"/>
+      <SkillCard initials-and-bar-color="violet" skill-initials="Vue" skill-name="Vue.js" :proficiency="80"/>
+      <SkillCard initials-and-bar-color="rose" skill-initials="Vue" skill-name="Vue.js" :proficiency="80"/>
       <!-- Repeat more skill cards as needed -->
     </div>
   </div>

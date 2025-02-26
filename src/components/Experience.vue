@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { Timeline } from '@elemento/ui';
 import type { CardInformation } from '@elemento/ui';
 
-const experienceData = ref<CardInformation>([
+const experienceData = ref<CardInformation[]>([
     {
         title: "Software Engineer",
         description: "Developed user-centric web applications and enhanced system performance.",

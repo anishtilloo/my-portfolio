@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { ref, defineAsyncComponent } from 'vue';
+import { ref, defineAsyncComponent } from "vue";
 import Header from './Header.vue';
+import About from "./About.vue";
 import SlidingAnimation from './Animation/Sliding.vue';
-// import { Button1, HelloWorld1, Card } from '@elemento/ui'
 
 import type { NavigationTabType } from '../types/common.types';
 
-const About = defineAsyncComponent(() => import('./About.vue'));
+// const About = defineAsyncComponent(() => import('./About.vue'));
 const Experience = defineAsyncComponent(() => import('./Experience.vue'));
-const Projects = defineAsyncComponent(() => import("./Projects.vue"));
+const Projects = defineAsyncComponent(() => import('./Projects.vue'));
 const Contact = defineAsyncComponent(() => import('./Contact.vue'));
 const Skills = defineAsyncComponent(() => import('./Skills.vue'))
 
@@ -18,14 +18,14 @@ function renderComponent(selectedComponent: NavigationTabType) {
   switch (selectedComponent) {
     case 'Contact':
       return Contact;
-    case 'Experience':
-      return Experience;
+    // case 'Experience':
+    //   return Experience;
     case 'Projects':
       return Projects;
     case 'Skills':
       return Skills;
     default:
-      return About;
+      return Experience;
   }
 }
 
@@ -36,11 +36,19 @@ function handleComponentChange(selectedComponent: NavigationTabType) {
 
 <template>
   <div class="p-10 w-screen h-screen bg-transparent overflow-auto">
-    <div class="w-full h-full">
-        <Header @component-change="handleComponentChange" />
-        <div class="flex justify-center items-center">
+    <div class="w-full h-full flex justify-between overflow-scroll">
+        <div class="h-full z-50 w-1/3">
+          <Header @component-change="handleComponentChange" />
+          <About />
+        </div>
+        <div class="flex justify-end items-end overflow-y-auto h-full w-2/3">
             <SlidingAnimation :componentKey="selectedLink"> 
                 <component :is="renderComponent(selectedLink)" />
+                <!-- <About />
+                <Experience />
+                <Projects />
+                <Skills />
+                <Contact /> -->
             </SlidingAnimation>
         </div>
     </div>

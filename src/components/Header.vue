@@ -17,19 +17,13 @@ function handleComponentChange(selectedComponent: NavigationTabType) {
 </script>
 <template>
     <div>
-        <div class="p-4 flex flex-col text-center">
+        <div class="p-8 flex flex-col text-center">
             <div class="flex justify-between">
-                <div>
-                    Start
-                </div>
                 <div class="text-5xl font-thin uppercase tracking-wide">
                     Anish Tilloo
                 </div>
-                <div>
-                    End
-                </div>
             </div>
-            <div class="flex justify-center">
+            <div class="flex justify-start">
                 <div class="w-[19rem] text-left">
                     Software Engineer
                 </div>
