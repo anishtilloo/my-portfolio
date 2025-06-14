@@ -34,7 +34,8 @@ function handleComponentChange(selectedComponent: NavigationTabType) {
 }
 </script>
 
-<template>  <div class="w-full h-full bg-transparent scrollbar-hide">
+<template>
+  <div class="w-full h-full bg-transparent scrollbar-hide text-gray-900 dark:text-white">
     <div class="w-full h-full flex justify-evenly">
         <div class="h-full z-50 w-1/3">
           <Header @component-change="handleComponentChange" />

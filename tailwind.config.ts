@@ -8,6 +8,7 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
     "./node_modules/@elemento/ui/dist/style.css"
   ],
+  darkMode: 'class',
   theme: {
     extend: {},
   },

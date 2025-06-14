@@ -2,6 +2,7 @@ import { createApp, type Directive, type DirectiveBinding, type VNode } from 'vu
 import './style.css'
 import App from './App.vue'
 import '@elemento/ui/styles.css'
+import { createPinia } from 'pinia';
 
 export const appear: Directive = {
     beforeMount(element: HTMLElement) {
@@ -28,4 +29,4 @@ export const appear: Directive = {
         node.transition.enter(element);
     }
 };
-createApp(App).directive('appear', appear).mount('#app')
+createApp(App).directive('appear', appear).use(createPinia()).mount('#app')

@@ -7,7 +7,7 @@ const emit = defineEmits<{
     (event: 'component-change', selectedComponent: NavigationTabType): void;
 }>();
 
-const componentName = ref<NavigationTabType>('About');
+const componentName = ref<NavigationTabType>('Experience');
 
 function handleComponentChange(selectedComponent: NavigationTabType) {
     componentName.value = selectedComponent;
@@ -30,15 +30,15 @@ function handleComponentChange(selectedComponent: NavigationTabType) {
             </div>
         </div>
         <div class="p-8">
-            <ul class="flex justify-start space-x-8">
+            <ul class="flex justify-start space-x-8 dark:text-white">                
                 <li 
                     v-for="item in NavigationTabNames" 
                     :key="item"
                     @click="handleComponentChange(item)"
-                    class="rounded-lg cursor-pointer transition-all duration-300 ease-in-out"
+                    class="rounded-lg cursor-pointer transition-all duration-300 ease-in-out dark:text-white"
                     :class="componentName === item 
-                        ? 'bg-white text-black scale-105 shadow-lg py-1 px-2' 
-                        : 'nav-link p-1'"
+                        ? 'bg-white dark:bg-gray-700 scale-105 shadow-lg py-1 px-2' 
+                        : 'nav-link p-1 dark:text-gray-300'"
                 >
                     {{ item }}
                 </li>
