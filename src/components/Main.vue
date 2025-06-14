@@ -34,23 +34,28 @@ function handleComponentChange(selectedComponent: NavigationTabType) {
 }
 </script>
 
-<template>
-  <div class="p-10 w-screen h-screen bg-transparent overflow-auto">
-    <div class="w-full h-full flex justify-between overflow-scroll">
+<template>  <div class="w-full h-full bg-transparent scrollbar-hide">
+    <div class="w-full h-full flex justify-evenly">
         <div class="h-full z-50 w-1/3">
           <Header @component-change="handleComponentChange" />
           <About />
         </div>
-        <div class="flex justify-end items-end overflow-y-auto h-full w-2/3">
+        <div class="flex justify-center h-full w-2/3">
             <SlidingAnimation :componentKey="selectedLink"> 
-                <component :is="renderComponent(selectedLink)" />
-                <!-- <About />
-                <Experience />
-                <Projects />
-                <Skills />
-                <Contact /> -->
+              <component :is="renderComponent(selectedLink)" />
             </SlidingAnimation>
         </div>
     </div>
   </div>
 </template>
+
+<style scoped>
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+}
+</style>

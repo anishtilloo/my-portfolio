@@ -29,8 +29,8 @@ function handleComponentChange(selectedComponent: NavigationTabType) {
                 </div>
             </div>
         </div>
-        <div class="p-4">
-            <ul class="flex justify-center space-x-8">
+        <div class="p-8">
+            <ul class="flex justify-start space-x-8">
                 <li 
                     v-for="item in NavigationTabNames" 
                     :key="item"

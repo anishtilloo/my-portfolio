@@ -55,16 +55,31 @@ const projects = ref([
 </script>
 
 <template>
-  <section id="projects" class="py-16 h-10">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
-        <div
-          v-for="project in projects"
-          :key="project.id"
-        >
-            <ImageCard :displayData="project" />
+  <section id="projects" class="h-screen flex flex-col">
+    <div class="flex-1 overflow-y-auto scrollbar-hide">
+      <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6">
+          <div
+            v-for="project in projects"
+            :key="project.id"
+            class="p-2"
+          >
+              <ImageCard :displayData="project" />
+          </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+
+<style scoped>
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+}
+</style>
